@@ -1,16 +1,10 @@
 require 'rails_helper'
 
 feature 'Signed in user' do
-  let(:user) { create :user, :confirmed }
+  include_context "current user signed in"
 
-  let(:login_page) { Devise::Sessions::New.new }
-  let(:new_article_page) { Articles::New.new }
-  let(:articles_page) { Articles::Index.new }
-
-  before(:each) do
-    login_page.load
-    login_page.sign_in(user.email, '123456')
-    new_article_page.load
+  background do
+    visit new_article_path
   end
 
   scenario 'can create article with valid data' do
@@ -18,8 +12,8 @@ feature 'Signed in user' do
   end
 
   scenario 'can not create article with invalid data' do
-    new_article_page.create(title: '')
-    expect(new_article_page).to have_validation_error_alert
+    fill_in("title", with: "")
+    expect(page).to have_validation_error_alert
   end
 
   scenario 'has create new article link' do

@@ -15,9 +15,11 @@ class ArticlePresenter < ApplicationPresenter
   end
 
   def posted_by
-    I18n.t('app.article.posted_by',
-           username: article.user.full_name,
-           time_ago: time_ago_in_words(article.created_at))
+    I18n.t(
+      "app.article.posted_by",
+      username: article.user.full_name,
+      time_ago: time_ago_in_words(article.created_at)
+    )
   end
 
   def user_avatar_url

@@ -15,12 +15,12 @@ class ArticlesController < ApplicationController
 
   def create
     article.user = current_user
-    flash[:notice] = I18n.t('app.article.creation_successful') if article.save
+    flash[:notice] = I18n.t("app.article.creation_successful") if article.save
     respond_with(article)
   end
 
   def update
-    flash[:notice] = I18n.t('app.article.update_successful') if article.save
+    flash[:notice] = I18n.t("app.article.update_successful") if article.save
     respond_with(article)
   end
 
@@ -32,6 +32,6 @@ class ArticlesController < ApplicationController
 
   def authorize_user!
     return if ArticlePolicy.new(current_user, article).manage?
-    redirect_to(root_url, alert: I18n.t('app.access_denied'))
+    redirect_to(root_url, alert: I18n.t("app.access_denied"))
   end
 end

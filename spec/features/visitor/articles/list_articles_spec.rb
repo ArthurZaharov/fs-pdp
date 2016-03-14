@@ -1,31 +1,16 @@
 require "rails_helper"
 
-feature "Articles page" do
-  let(:articles_page) { Articles::Index.new }
-
-  let!(:article) { create :article }
-  let!(:other_article) { create :article }
+feature "List Articles" do
+  let!(:articles) { create_list :article, 3 }
 
   before(:each) do
-    articles_page.load
+    visit root_path
   end
 
-  scenario "does not have notice massages" do
-    expect(articles_page).not_to have_create_successful_notice
-  end
-
-  scenario "contains first article" do
-    expect(articles_page).to have_text article.title
-    expect(articles_page).to have_text article.content
-  end
-
-  scenario "contains second article" do
-    expect(articles_page).to have_text other_article.title
-    expect(articles_page).to have_text other_article.content
-  end
-
-  scenario "contains properly links to articles" do
-    expect(articles_page).to have_link article.title, href: article_path(article)
-    expect(articles_page).to have_link other_article.title, href: article_path(other_article)
+  scenario "Can view list of articles" do
+    articles.each do |article|
+      expect(page).to have_link(article.title, href: article_path(article))
+      expect(page).to have_text(article.content)
+    end
   end
 end

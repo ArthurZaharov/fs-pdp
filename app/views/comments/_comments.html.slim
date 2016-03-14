@@ -1,5 +1,5 @@
 - if comments_presenter.any?
-  h4 = t("app.comment.title")
+  h4 Comments
   - comments_presenter.each do |comment_presenter|
     .comment
       span.avatar = image_tag(comment_presenter.user_avatar_url, size: "18")

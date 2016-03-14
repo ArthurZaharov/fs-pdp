@@ -1,27 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Article page' do
+feature "Show article (visitor)" do
   let!(:article) { create :article }
 
-  let(:article_page) { Articles::Show.new }
-
   before(:each) do
-    article_page.load(id: article.id)
+    visit article_path(article)
   end
 
-  scenario 'have title' do
-    expect(article_page).to have_text article.title
-  end
-
-  scenario 'have content' do
-    expect(article_page).to have_text article.content
-  end
-
-  scenario 'does not have edit link' do
-    expect(article_page).to_not have_edit_article_link
-  end
-
-  scenario 'does not have add comment button' do
-    expect(article_page).to_not have_create_comment_button
+  scenario "Visitor views the article" do
+    expect(page).to have_text(article.title)
+    expect(page).to have_text(article.content)
   end
 end

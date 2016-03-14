@@ -5,4 +5,6 @@ class Article < ActiveRecord::Base
   has_many :comments
 
   default_scope { order(created_at: :desc) }
+
+  delegate :full_name, :email, to: :user, prefix: true
 end

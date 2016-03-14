@@ -15,11 +15,7 @@ class CommentPresenter < ApplicationPresenter
   end
 
   def posted_by
-    I18n.t(
-      "app.comment.posted_by",
-      username: comment.user.full_name,
-      time_ago: time_ago_in_words(comment.created_at)
-    )
+    "#{comment.user.full_name} posted #{time_ago_in_words(comment.created_at)} ago"
   end
 
   def user_avatar_url

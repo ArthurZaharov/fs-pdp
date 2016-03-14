@@ -1,5 +1,7 @@
 after(:users) do
-  user = User.find_by_email("author@example.com")
+  user_ids = User.pluck(:id)
 
-  10.times { FactoryGirl.create(:article, user: user) }
+  if Article.count < 10
+    10.times { FactoryGirl.create(:article, user_id: user_ids.sample) }
+  end
 end

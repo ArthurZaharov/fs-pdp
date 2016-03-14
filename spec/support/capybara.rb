@@ -3,3 +3,5 @@ Capybara.configure do |config|
   config.javascript_driver = :webkit
   config.asset_host = "http://#{ENV.fetch('HOST')}"
 end
+
+Capybara::Webkit.configure(&:block_unknown_urls)

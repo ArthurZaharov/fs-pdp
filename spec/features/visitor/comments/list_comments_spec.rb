@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Guest user" do
+feature "List comments (visitor)" do
   let(:article) { create :article }
   let!(:comment) { create :comment, article: article }
 
@@ -8,7 +8,7 @@ feature "Guest user" do
     visit article_path(article)
   end
 
-  scenario "Can view comments" do
+  scenario "Visitor views the article comments" do
     expect(page).to have_text(comment.content)
   end
 end

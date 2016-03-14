@@ -1,37 +1,19 @@
 require "rails_helper"
 
-feature "Signed in user" do
-  let(:user) { create :user, :confirmed }
-  let!(:article) { create :article, user: user }
-  let!(:other_article) { create :article }
+feature "Edit articles" do
+  include_context "current user signed in"
 
-  let(:edit_article_page) { Articles::Edit.new }
-  let(:login_page) { Devise::Sessions::New.new }
+  let!(:article) { create :article, user: current_user }
 
   before(:each) do
-    login_page.load
-    login_page.sign_in(user.email, "123456")
-    edit_article_page.load(id: article.id)
+    visit edit_article_path(article)
   end
 
-  scenario "does not update article with invalid data" do
-    edit_article_page.update(title: "")
-    expect(edit_article_page).to have_validation_error_alert
-  end
+  scenario "User creates article" do
+    fill_form(:article, title: "New title")
+    click_button("Update Article")
 
-  scenario "update article with valid data" do
-    edit_article_page.update(title: "New title")
-    article.reload
-    expect(article.title).to eq "New title"
-  end
-
-  scenario "redirected to article after update" do
-    edit_article_page.update(title: "New title")
-    expect(edit_article_page).to have_update_successful_notice
-  end
-
-  scenario "does not update other article" do
-    edit_article_page.load(id: other_article.id)
-    expect(edit_article_page).to have_access_denied_alert
+    expect(page).to have_content("Article was successfully updated.")
+    expect(article.reload.title).to eq("New title")
   end
 end

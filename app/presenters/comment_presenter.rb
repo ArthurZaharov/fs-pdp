@@ -15,10 +15,10 @@ class CommentPresenter < ApplicationPresenter
   end
 
   def posted_by
-    "#{comment.user.full_name} posted #{time_ago_in_words(comment.created_at)} ago"
+    "#{comment.user_full_name} posted #{time_ago_in_words(comment.created_at)} ago"
   end
 
   def user_avatar_url
-    "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.user.email).downcase}.png"
+    "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.user_email).downcase}.png"
   end
 end

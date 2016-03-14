@@ -5,11 +5,12 @@
 }
 
 .article {
-  border-bottom: solid 1px #e0e0e0;
   padding: 0 0 20px;
 
+  border-bottom: solid 1px $light_grey;
+
   &:last-child {
-    border-bottom: none;
+    border-bottom: 0;
   }
 
   h2 {
@@ -17,9 +18,11 @@
   }
 
   i {
-    font-size: 24px;
-    color: gray;
     margin-left: 5px;
+
+    color: $grey;
+
+    font-size: 24px;
   }
 
   p {

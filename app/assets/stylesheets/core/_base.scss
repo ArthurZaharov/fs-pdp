@@ -23,9 +23,11 @@ li {
   font-size: .85rem;
 }
 
-.posted_by {
-  color: gray;
-  margin: 0px 0px 5px 5px;
+.posted-by {
+  margin: 0 0 5px 5px;
+
+  color: $grey;
+
   font-size: 14px;
   font-style: italic;
 }

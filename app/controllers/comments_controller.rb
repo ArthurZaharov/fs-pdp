@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
 
   respond_to :js
 
-  expose(:article)
-  expose(:comments) { article.comments.includes(:user) }
+  expose_decorated(:article)
+  expose_decorated(:comments) { article.comments.includes(:user) }
   expose(:comment, attributes: :comment_params)
 
   def create

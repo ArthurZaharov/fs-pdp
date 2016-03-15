@@ -2,14 +2,10 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: %i(new create edit update)
   before_action :authorize_user!, only: %i(edit update)
 
-  expose(:articles) { Article.includes(:user).page(params[:page]) }
-  expose(:article, attributes: :article_params)
+  expose_decorated(:articles) { Article.includes(:user).page(params[:page]) }
+  expose_decorated(:article, attributes: :article_params)
   expose(:comment) { article.comments.build }
-  expose(:comments) { article.comments.includes(:user) }
-
-  expose(:articles_presenter) { ArticlePresenter.wrap(articles) }
-  expose(:article_presenter) { ArticlePresenter.wrap(article) }
-  expose(:comments_presenter) { CommentPresenter.wrap(comments) }
+  expose_decorated(:comments) { article.comments.includes(:user) }
 
   def index
   end

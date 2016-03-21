@@ -1,8 +1,15 @@
 .article
   .row
-    h2 = link_to(article.title, article)
+    .columns.small-12
+      h2 = link_to(article.title, article)
+      - if ArticlePolicy.new(current_user, article).manage?
+        = link_to(edit_article_path(article))
+          i.fi-pencil
   .row
-    span.avatar = image_tag(article.user_avatar_url, size: "18")
-    span.posted-by = article.posted_by
+    .columns.small-1
+      .avatar = article.user_avatar
+    .columns.small-11
+      = article.formatted_content
   .row
-    = article.content
+    .columns
+      span.posted-by.right = article.posted_by

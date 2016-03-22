@@ -103,8 +103,15 @@ GEM
       execjs
       json
     concurrent-ruby (1.0.1)
+    countries (1.2.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    country_select (2.5.2)
+      countries (~> 1.2.0)
+      sort_alphabetical (~> 1.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    currencies (0.4.2)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     decent_decoration (0.0.6)
@@ -161,6 +168,10 @@ GEM
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
+    geokit (1.10.0)
+    geokit-rails (2.1.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     google-analytics-rails (1.1.0)
@@ -172,6 +183,7 @@ GEM
     highline (1.7.8)
     htmlentities (4.3.4)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     interactor (3.1.0)
     jasmine (2.4.0)
       jasmine-core (~> 2.4)
@@ -355,6 +367,8 @@ GEM
       slim (~> 3.0)
       sysexits (~> 1.1)
     slop (3.6.0)
+    sort_alphabetical (1.0.2)
+      unicode_utils (>= 1.2.2)
     spring (1.6.4)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -381,7 +395,9 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode-display_width (0.3.1)
+    unicode_utils (1.4.0)
     uniform_notifier (1.9.0)
+    vcr (3.0.1)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -412,6 +428,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails
   coffeelint
+  country_select
   database_cleaner
   decent_decoration
   decent_exposure
@@ -427,6 +444,7 @@ DEPENDENCIES
   foundation-icons-sass-rails
   foundation-rails (~> 5.5.2.1)
   fuubar (~> 2.0.0.rc1)
+  geokit-rails
   google-analytics-rails
   health_check
   interactor
@@ -469,6 +487,7 @@ DEPENDENCIES
   stackprof
   therubyracer
   uglifier (>= 2.7.2)
+  vcr
   web-console (~> 2.0)
   webmock
 

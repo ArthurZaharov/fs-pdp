@@ -12,13 +12,12 @@
       .form-inputs
         = f.input :full_name, required: true, autofocus: true
         = f.input :email, required: true
-        = f.input :password,
-            autocomplete: "off",
-            required: false
-        = f.input :password_confirmation,
-            required: false
-        = f.input :current_password,
-            required: true
+        = f.input :country
+        = f.input :city
+        = f.input :address
+        = f.input :password, autocomplete: "off", required: false
+        = f.input :password_confirmation, required: false
+        = f.input :current_password, required: true
 
       .form-actions
         = f.button :submit, "Update"

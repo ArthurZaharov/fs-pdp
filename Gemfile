@@ -18,6 +18,7 @@ gem "uglifier", ">= 2.7.2"
 
 # views
 gem "active_link_to"
+gem "country_select"
 gem "metamagic"
 gem "simple_form"
 gem "slim"
@@ -28,6 +29,7 @@ gem "decent_exposure"
 gem "devise"
 gem "draper"
 gem "flamegraph"
+gem "geokit-rails"
 gem "google-analytics-rails"
 gem "health_check"
 gem "interactor"
@@ -56,7 +58,8 @@ group :test do
   gem "formulaic"
   gem "launchy"
   gem "shoulda-matchers", require: false
-  gem "webmock", require: false
+  gem "vcr"
+  gem "webmock"
 end
 
 group :development, :test do

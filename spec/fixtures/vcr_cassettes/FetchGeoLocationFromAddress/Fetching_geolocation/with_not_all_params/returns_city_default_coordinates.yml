@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.google.com/maps/api/geocode/json?address=New%20Orleans,%20USA&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 22 Mar 2016 15:39:34 GMT
+      Expires:
+      - Wed, 23 Mar 2016 15:39:34 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "New Orleans",
+                       "short_name" : "New Orleans",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Orleans Parish",
+                       "short_name" : "Orleans Parish",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Louisiana",
+                       "short_name" : "LA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "New Orleans, LA, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 30.1748625,
+                          "lng" : -89.62693109999999
+                       },
+                       "southwest" : {
+                          "lat" : 29.8666609,
+                          "lng" : -90.14007389999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 29.95106579999999,
+                       "lng" : -90.0715323
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 30.1748625,
+                          "lng" : -89.62693109999999
+                       },
+                       "southwest" : {
+                          "lat" : 29.8666609,
+                          "lng" : -90.14007389999999
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJZYIRslSkIIYRtNMiXuhbBts",
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 22 Mar 2016 15:39:34 GMT
+recorded_with: VCR 3.0.1

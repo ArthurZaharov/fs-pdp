@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Update Account" do
+feature "Update Account", :vcr do
   include_context "current user signed in"
 
   background do
@@ -8,7 +8,7 @@ feature "Update Account" do
   end
 
   scenario "User updates account with valid data" do
-    fill_form(:user, full_name: "New Name", current_password: current_user.password)
+    fill_form(:user, full_name: "New Name", city: "New Orleans", current_password: current_user.password)
     click_on "Update"
 
     expect(page).to have_content("New Name")

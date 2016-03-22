@@ -58,7 +58,8 @@ group :test do
   gem "formulaic"
   gem "launchy"
   gem "shoulda-matchers", require: false
-  gem "webmock", require: false
+  gem "vcr"
+  gem "webmock"
 end
 
 group :development, :test do

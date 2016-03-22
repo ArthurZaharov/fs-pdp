@@ -10,7 +10,7 @@ class FetchGeoLocationFromAddress
   private
 
   def geo_location
-    return default_location if geo_params.compact.empty? || !geo.success
+    return default_location if geo_params_empty? || !geo.success
 
     {
       latitude: geo.lat,
@@ -19,7 +19,7 @@ class FetchGeoLocationFromAddress
   end
 
   def full_address
-    [country, city, address].compact.join(", ")
+    [address, city, country].compact.join(", ")
   end
 
   def country
@@ -39,6 +39,10 @@ class FetchGeoLocationFromAddress
       latitude: "25.215062",
       longitude: "55.190368"
     }
+  end
+
+  def geo_params_empty?
+    geo_params.values.all?(&:empty?)
   end
 
   def geo

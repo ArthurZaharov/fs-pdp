@@ -397,6 +397,7 @@ GEM
     unicode-display_width (0.3.1)
     unicode_utils (1.4.0)
     uniform_notifier (1.9.0)
+    vcr (3.0.1)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -486,6 +487,7 @@ DEPENDENCIES
   stackprof
   therubyracer
   uglifier (>= 2.7.2)
+  vcr
   web-console (~> 2.0)
   webmock
 

@@ -1,15 +1,6 @@
 .container
   .article
-    .row
-      h2 = article.title
-      - if ArticlePolicy.new(current_user, article).manage?
-        = link_to(edit_article_path(article))
-          i.fi-pencil
-    .row
-      span.avatar = image_tag(article.user_avatar_url, size: "18")
-      span.posted-by = article.posted_by
-    .row
-      p = article.content
+    = render(article)
     .row
       .comments
         = render(comments)

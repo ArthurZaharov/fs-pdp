@@ -1,4 +1,4 @@
 .comment
-  span.avatar = image_tag(comment.user_avatar_url, size: "18")
+  span.avatar = comment.user_avatar
   span.posted-by = comment.posted_by
-  = comment.content
+  = comment.formatted_content

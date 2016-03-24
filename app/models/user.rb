@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  geocoded_by :full_address
+  after_validation :geocode
+
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable
 
@@ -13,5 +16,9 @@ class User < ActiveRecord::Base
 
   def full_name_with_email
     "#{self[:full_name]} (#{email})"
+  end
+
+  def full_address
+    [address, city, country].reject(&:blank?).join(", ")
   end
 end

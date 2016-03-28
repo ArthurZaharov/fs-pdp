@@ -11,12 +11,15 @@ class Map
       lng: position.coords.longitude
 
   byIpPosition: =>
-    if App.currentIPLocation[0] != 0 || App.currentIPLocation[1] != 0
-      @renderMap
-        lat: App.currentIPLocation[0]
-        lng: App.currentIPLocation[1]
-    else
-      @byDefaultPosition()
+    $.ajax
+      url: "http://freegeoip.net/json/#{App.request.get('ip')}"
+      timeout: 3000,
+      success: (position) =>
+        @renderMap
+          lat: position.latitude
+          lng: position.longitude
+      error: () =>
+        @byDefaultPosition()
 
   byDefaultPosition: =>
     @renderMap

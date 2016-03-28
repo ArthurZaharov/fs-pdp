@@ -3,12 +3,20 @@ class Map
     @elem = document.getElementById("map")
 
   init: ->
-    navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byDefaultPosition)
+    navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
 
   byBrowserPosition: (position) =>
     @renderMap
       lat: position.coords.latitude
       lng: position.coords.longitude
+
+  byIpPosition: =>
+    if App.currentIPLocation[0] != 0 || App.currentIPLocation[1] != 0
+      @renderMap
+        lat: App.currentIPLocation[0]
+        lng: App.currentIPLocation[1]
+    else
+      @byDefaultPosition()
 
   byDefaultPosition: =>
     @renderMap

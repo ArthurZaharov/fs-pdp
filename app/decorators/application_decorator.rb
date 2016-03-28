@@ -24,6 +24,6 @@ class ApplicationDecorator < Draper::Decorator
   private
 
   def user_avatar_url
-    "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(object.user_email).downcase}.png"
+    "https://gravatar.com/avatar/#{Digest::MD5.hexdigest(object.user_email).downcase}.png"
   end
 end

@@ -12,7 +12,7 @@ class Map
 
   byIpPosition: =>
     $.ajax
-      url: "http://freegeoip.net/json/#{App.request.get('ip')}"
+      url: "https://freegeoip.net/json/#{App.request.get('ip')}"
       timeout: 3000,
       success: (position) =>
         @renderMap

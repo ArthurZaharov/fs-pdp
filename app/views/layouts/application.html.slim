@@ -31,5 +31,5 @@ html class="no-js" lang="en"
       App.currentUserData = #{{current_user.to_json}};
       App.requestData = #{{ { ip: request.ip }.to_json }};
 
-    script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=#{ENV.fetch("GOOGLE_MAPS_API_KEY", "")}"
+    = javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV.fetch('GOOGLE_MAPS_API_KEY', '')}"
     = javascript_include_tag :application

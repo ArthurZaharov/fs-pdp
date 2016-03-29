@@ -14,4 +14,14 @@ FactoryGirl.define do
       user.update(confirmation_sent_at: 3.days.ago)
     end
   end
+
+  trait :in_new_york do
+    country "US"
+    city "New York"
+  end
+
+  trait :in_new_orleans do
+    country "US"
+    city "New Orleans"
+  end
 end

@@ -4,9 +4,9 @@ class AuthorsWithinRadiusQuery
 
   NEW_ORLEANS_COORDS = [29.951066, -90.071532].freeze
 
-  def initialize(center:, radius:)
-    @center = center || NEW_ORLEANS_COORDS
-    @radius = radius || 50
+  def initialize(args)
+    @center = args[:center] || NEW_ORLEANS_COORDS
+    @radius = args[:radius] || 50
   end
 
   def all

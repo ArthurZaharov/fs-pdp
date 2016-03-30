@@ -9,6 +9,7 @@
 #= require foundation
 #= require current_user
 #= require skim
+#= require local_time
 #= require_tree ../templates
 #= require_tree .
 

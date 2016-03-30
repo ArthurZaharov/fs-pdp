@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 
-  default_scope { order(created_at: :desc) }
+  scope :recent, -> { order(created_at: :desc) }
 
   delegate :full_name, :email, to: :user, prefix: true
 end

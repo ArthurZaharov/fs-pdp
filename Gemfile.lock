@@ -202,6 +202,8 @@ GEM
     letter_opener (1.4.1)
       launchy (~> 2.2)
     libv8 (3.16.14.13)
+    local_time (1.0.3)
+      coffee-rails
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -451,6 +453,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
+  local_time
   memory_profiler
   metamagic
   newrelic_rpm

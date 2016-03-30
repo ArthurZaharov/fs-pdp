@@ -2,6 +2,7 @@ class ApplicationDecorator < Draper::Decorator
   include ActionView::Helpers::TextHelper
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::AssetTagHelper
+  include LocalTimeHelper
 
   delegate :to_model
 
@@ -14,7 +15,7 @@ class ApplicationDecorator < Draper::Decorator
   end
 
   def posted_by
-    "#{object.user_full_name} posted #{time_ago_in_words(object.created_at)} ago"
+    "#{object.user_full_name} posted #{local_time_ago(object.created_at)}".html_safe
   end
 
   def user_avatar

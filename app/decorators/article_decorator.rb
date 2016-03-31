@@ -1,3 +1,3 @@
 class ArticleDecorator < ApplicationDecorator
-  delegate :id, :title, :content
+  delegate :id, :title, :content, :user
 end

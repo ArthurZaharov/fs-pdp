@@ -1,15 +1,16 @@
-.article
-  .row
-    .columns.small-12
-      h2 = link_to(article.title, article)
-      - if ArticlePolicy.new(current_user, article).manage?
-        = link_to(edit_article_path(article))
-          i.fi-pencil
-  .row
-    .columns.small-1
-      .avatar = article.user_avatar
-    .columns.small-11
-      = article.formatted_content
-  .row
-    .columns
-      span.posted-by.right = article.posted_by
+- cache [article.object, article.user]
+  .article
+    .row
+      .columns.small-12
+        h2 = link_to(article.title, article)
+        - if ArticlePolicy.new(current_user, article).manage?
+          = link_to(edit_article_path(article))
+            i.fi-pencil
+    .row
+      .columns.small-1
+        .avatar = article.user_avatar
+      .columns.small-11
+        = article.formatted_content
+    .row
+      .columns
+        span.posted-by.right = article.posted_by

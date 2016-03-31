@@ -112,6 +112,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     currencies (0.4.2)
+    dalli (2.7.6)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     decent_decoration (0.0.6)
@@ -208,10 +209,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    memcached (1.8.0)
-    memcached_store (0.12.7)
-      activesupport (>= 3.2)
-      memcached (~> 1.8.0)
     memory_profiler (0.9.6)
     metamagic (3.1.7)
       rails (>= 3.0.0)
@@ -432,6 +429,7 @@ DEPENDENCIES
   coffee-rails
   coffeelint
   country_select
+  dalli
   database_cleaner
   decent_decoration
   decent_exposure
@@ -458,7 +456,6 @@ DEPENDENCIES
   launchy
   letter_opener
   local_time
-  memcached_store
   memory_profiler
   metamagic
   newrelic_rpm

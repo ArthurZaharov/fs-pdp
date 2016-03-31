@@ -46,9 +46,9 @@ gem "seedbank"
 gem "stackprof"
 
 group :staging, :production do
+  gem "dalli"
   gem "newrelic_rpm"
   gem "rails_stdout_logging"
-  gem "memcached_store"
 end
 
 group :test do

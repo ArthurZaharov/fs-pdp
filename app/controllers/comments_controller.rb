@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   respond_to :js
 
   expose_decorated(:article)
-  expose_decorated(:comments) { article.comments.includes(:user) }
+  expose_decorated(:comments, ancestor: :article) { |scope| scope.includes(:user) }
   expose(:comment, attributes: :comment_params)
 
   def create

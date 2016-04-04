@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: %i(new create edit update)
-  before_action :authorize_user!, only: %i(edit update)
+  before_action :authorize!, only: %i(edit update)
 
   expose_decorated(:articles) { |scope| scope.includes(:user).recent.limit(10) }
   expose_decorated(:article, attributes: :article_params)
   expose(:comment) { article.comments.build }
-  expose_decorated(:comments) { article.comments.includes(:user) }
+  expose_decorated(:comments, ancestor: :article) { |scope| scope.includes(:user) }
 
   def index
   end
@@ -36,8 +36,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content)
   end
 
-  def authorize_user!
-    return if ArticlePolicy.new(current_user, article).manage?
-    redirect_to(root_url, alert: I18n.t("app.access_denied"))
+  def authorize!
+    authorize(article, :manage?)
   end
 end

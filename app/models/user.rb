@@ -14,10 +14,6 @@ class User < ActiveRecord::Base
     full_name
   end
 
-  def full_name_with_email
-    "#{self[:full_name]} (#{email})"
-  end
-
   def full_address
     [address, city, country].reject(&:blank?).join(", ")
   end

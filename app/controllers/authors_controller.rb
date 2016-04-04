@@ -1,7 +1,7 @@
 class AuthorsController < ApplicationController
   respond_to :json
 
-  expose(:authors) { AuthorsWithinRadiusQuery.new(center: center, radius: radius).all }
+  expose(:authors) { AuthorsWithinBoundingBoxQuery.new(search_params).all }
 
   def index
     respond_with(authors)
@@ -9,11 +9,7 @@ class AuthorsController < ApplicationController
 
   private
 
-  def center
-    params["center"].values
-  end
-
-  def radius
-    params["radius"]
+  def search_params
+    params.require(:bounds)
   end
 end

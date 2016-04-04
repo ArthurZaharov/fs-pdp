@@ -4,7 +4,7 @@ class ApplicationDecorator < Draper::Decorator
   include ActionView::Helpers::AssetTagHelper
   include LocalTimeHelper
 
-  delegate :to_model
+  delegate :to_model, :cache_key
 
   def self.collection_decorator_class
     PaginatingDecorator

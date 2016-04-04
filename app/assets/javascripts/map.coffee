@@ -5,7 +5,6 @@ class Map
       lat: 29.951066
       lng: -90.071532
     @map = new google.maps.Map elem, { center: center, zoom: 11 }
-    @fetchAuthors()
 
   bindEvents: () ->
     @map.addListener "dragend", @fetchAuthors
@@ -15,20 +14,34 @@ class Map
     @bindEvents()
     navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
 
-  mapCenter: ->
-    lat: @map.getCenter().lat()
-    lng: @map.getCenter().lng()
+  mapBounds: ->
+    @map.getBounds()
+
+  swPoint: ->
+    @mapBounds().getSouthWest()
+
+  nePoint: ->
+    @mapBounds().getNorthEast()
+
+  fetchAuthorsParams: ->
+    bounds:
+      sw_point:
+        lat: @swPoint().lat()
+        lng: @swPoint().lng()
+      ne_point:
+        lat: @nePoint().lat()
+        lng: @nePoint().lng()
 
   fetchAuthors: () =>
     $.ajax
       url: "/authors"
       dataType: "json"
-      data:
-        center: @mapCenter(),
-        radius: 100
-      success: (data) =>
-        $.each data, (index, author) =>
-          new Author(author).show(@map)
+      data: @fetchAuthorsParams()
+      success: @showAuthors
+
+  showAuthors: (data) =>
+    $.each data, (index, author) =>
+      new Author(author).show(@map)
 
   byBrowserPosition: (position) =>
     @map.setCenter

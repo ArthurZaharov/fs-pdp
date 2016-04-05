@@ -1,0 +1,13 @@
+.article
+  .row
+    .columns.medium-12
+      h3 = link_to(article.title, article)
+      - if policy(article).manage?
+        = link_to(edit_article_path(article))
+          i.fi-pencil
+  .row
+    .columns.medium-12
+      = article.formatted_content
+  .row
+    .columns
+      span.posted-by.right = article.posted_by

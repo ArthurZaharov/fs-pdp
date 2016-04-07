@@ -1,4 +1,9 @@
 .comment
-  span.avatar = comment.user_avatar
-  span.posted-by = comment.posted_by
-  = comment.formatted_content
+  .row
+    .columns.medium-1
+      .avatar = comment.user_avatar
+    .columns.medium-11
+      = comment.formatted_content
+  .row
+    .columns.medium-offset-1
+      p.posted-by = comment.posted_by

@@ -1,9 +1,7 @@
-.container
-  .article
-    = render(article)
-    .row
-      .comments
-        = render(comments)
-      - if current_user
-        .row.comments-form
-          = render("comments/form")
+= render(article)
+.comments
+  - if comments.any?
+    = render(comments)
+.comments-form
+  - if current_user
+    = render("comments/form")

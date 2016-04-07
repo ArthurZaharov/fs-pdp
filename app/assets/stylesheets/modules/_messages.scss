@@ -3,3 +3,7 @@
   border-color: scale-color($info-color, $lightness: $alert-function-factor);
   background: $info-color;
 }
+
+.alert-box {
+  margin-bottom: 0;
+}

@@ -1,12 +1,7 @@
-.comment {
-  margin: 10px 20px;
+.comments {
+  padding-top: 50px;
 
-  p {
-    margin-left: 20px;
+  .comment p {
+    font-size: .85rem;
   }
-}
-
-.comments-form {
-  padding: 35px;
-  padding-bottom: 0;
 }

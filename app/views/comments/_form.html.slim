@@ -1,5 +1,8 @@
-= simple_form_for([article, comment], remote: true) do |f|
-  .form-inputs
-    = f.input :content, required: true, input_html: { rows: 2 }
-  .form-actions
-    = f.button :submit, class: "small"
+.row
+  .columns
+    = simple_form_for([article, comment], remote: true) do |f|
+      = f.input :content,
+                label: false,
+                placeholder: "Post new comment...",
+                input_html: { rows: 5 }
+      = f.button :submit, class: "small"

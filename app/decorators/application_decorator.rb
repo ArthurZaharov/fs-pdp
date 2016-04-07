@@ -19,7 +19,7 @@ class ApplicationDecorator < Draper::Decorator
   end
 
   def user_avatar
-    image_tag(user_avatar_url, size: "45", alt: object.user_full_name)
+    image_tag(user_avatar_url, size: "75", alt: object.user_full_name)
   end
 
   private

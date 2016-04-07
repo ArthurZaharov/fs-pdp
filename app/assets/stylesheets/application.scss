@@ -1,12 +1,6 @@
-$light_grey: #e0e0e0;
-$grey: #808080;
-
-@import "core/all";
-@import "modules/all";
-
 // Vendor libraries
 @import "foundation-icons";
 
-@import "views/articles";
-@import "views/comments";
-@import "views/users";
+@import "core/all";
+@import "modules/all";
+@import "views/all";

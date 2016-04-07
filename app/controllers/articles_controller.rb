@@ -30,6 +30,11 @@ class ArticlesController < ApplicationController
     respond_with(article)
   end
 
+  def destroy
+    article.destroy
+    respond_with(article)
+  end
+
   private
 
   def article_params

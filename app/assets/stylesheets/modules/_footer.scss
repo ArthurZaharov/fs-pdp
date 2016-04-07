@@ -1,9 +1,10 @@
 footer {
-  clear: both;
+  height: 4em;
 
-  min-height: 40px;
+  color: $white;
+  background: $dark_light;
 
-  p {
-    margin: 0;
+  .copyright {
+    padding: 20px 25px;
   }
 }

@@ -11,10 +11,17 @@ feature "Create comments" do
   end
 
   scenario "User creates comment", js: true do
-    fill_form(:comment, content: comment_content)
+    fill_in "comment_content", with: comment_content
     click_button("Create Comment")
 
     expect(page).to have_content(current_user.full_name)
     expect(page).to have_content(comment_content)
+  end
+
+  scenario "Validation error", js: true do
+    click_button("Create Comment")
+
+    expect(page).not_to have_content(comment_content)
+    expect(page).to have_content("can't be blank")
   end
 end

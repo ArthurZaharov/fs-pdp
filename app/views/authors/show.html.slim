@@ -1,8 +1,7 @@
-.container
-  .row
-    .user
-      .columns.medium-3
-        = render("profile")
-    .articles
-      .columns.medium-9
-        = render(partial: "authors/article", collection: articles)
+.row
+  .user
+    .columns.medium-3
+      = render("profile")
+  .articles
+    .columns.medium-9
+      = render(partial: "authors/article", collection: articles)

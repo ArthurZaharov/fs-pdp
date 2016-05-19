@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     article.user = current_user
-    article.save!
+    article.save
     respond_with(article)
   end
 
@@ -26,7 +26,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article.save!
+    article.save
+    respond_with(article)
+  end
+
+  def destroy
+    article.destroy
     respond_with(article)
   end
 

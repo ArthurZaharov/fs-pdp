@@ -1,16 +1,18 @@
 - cache [article, article.user]
   .article
     .row
-      .columns.medium-12
+      .columns
         h2 = link_to(article.title, article)
-        - if policy(article).manage?
-          = link_to(edit_article_path(article))
-            i.fi-pencil
-    .row
-      .columns.medium-1
-        .avatar = article.user_avatar
-      .columns.medium-11
-        = article.formatted_content
     .row
       .columns
-        span.posted-by.right = article.posted_by
+        = article.formatted_content
+    .row
+      .columns.medium-8
+        - if policy(article).manage?
+          = link_to(edit_article_path(article))
+            fi.fi-pencil
+          = link_to(article_path(article), method: :delete)
+            fi.fi-trash
+
+      .columns.medium-4
+        p.posted-by.right = article.posted_by

@@ -19,11 +19,13 @@ html class="no-js" lang="en"
     == analytics_init if GA.tracker
 
   body
-    #root
+    .header
       = render "navigation"
-      = render "messages"
 
-      = yield
+    #root
+      .container
+        = render "messages"
+        = yield
 
     = render "footer"
 

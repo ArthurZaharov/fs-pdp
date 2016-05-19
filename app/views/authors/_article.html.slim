@@ -7,7 +7,7 @@
           i.fi-pencil
   .row
     .columns.medium-12
-      = article.formatted_content
+      = simple_format(article.content_excerpt)
   .row
     .columns
       span.posted-by.right = article.posted_by

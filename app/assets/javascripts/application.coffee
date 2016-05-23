@@ -14,3 +14,7 @@
 #= require_tree .
 
 $(document).foundation()
+
+$ ->
+  if $("#map").length > 0
+    new Map()

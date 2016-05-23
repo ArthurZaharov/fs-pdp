@@ -1,19 +1,17 @@
 class @Map
+  mapElement: document.getElementById("map")
+  defaultCenter:
+    lat: 29.951066
+    lng: -90.071532
+
   constructor: ->
-    elem = $("#map")[0]
-    center =
-      lat: 29.951066
-      lng: -90.071532
-    @map = new google.maps.Map elem, { center: center, zoom: 11 }
+    @map = new google.maps.Map(@mapElement, { center: @defaultCenter, zoom: 11 })
+    navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
+    @bindEvents()
     new SearchBox(@map)
 
   bindEvents: () ->
-    @map.addListener "dragend", @fetchAuthors
-    @map.addListener "zoom_changed", @fetchAuthors
-
-  init: ->
-    @bindEvents()
-    navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
+    @map.addListener("bounds_changed", @fetchAuthors)
 
   mapBounds: ->
     @map.getBounds()
@@ -58,7 +56,3 @@ class @Map
           @map.setCenter
             lat: position.latitude
             lng: position.longitude
-
-$ ->
-  if $("#map").length > 0
-    new Map().init()

@@ -1,10 +1,11 @@
-class Map
+class @Map
   constructor: ->
-    elem = document.getElementById("map")
+    elem = $("#map")[0]
     center =
       lat: 29.951066
       lng: -90.071532
     @map = new google.maps.Map elem, { center: center, zoom: 11 }
+    new SearchBox(@map)
 
   bindEvents: () ->
     @map.addListener "dragend", @fetchAuthors

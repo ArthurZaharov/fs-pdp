@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :authors, only: %i(index show)
-  resources :search_articles, only: :index
+  resources :search_authors, only: :index
   resource :feedback, only: %i(new create)
 
   get "*page", to: "static_pages#show", constraints: { page: :about_us }

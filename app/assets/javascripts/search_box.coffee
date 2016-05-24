@@ -10,7 +10,7 @@ class @SearchBox
 
   searchArticles: =>
     $.ajax
-      url: "/search_articles"
+      url: "/search_authors"
       dataType: "json"
       data:
         query: @input.val()

@@ -1,13 +1,11 @@
 class @Author
-  element:
-    document.createElement("div")
-
   constructor: (@data = {}) ->
     @marker = new google.maps.Marker
       position:
         lat: @get("latitude")
         lng: @get("longitude")
       title: @get("full_name")
+    @element = document.createElement("div")
     @init()
     @bindEvents()
 
@@ -22,9 +20,13 @@ class @Author
   bindEvents: () ->
     @marker.addListener "click", @showAuthorPage
     $(@element).on "click", @showAuthorPage
+    $(@element).on "mouseenter", @moveMapToAuthor
 
   showAuthorPage: =>
     window.location = "/authors/#{@get('id')}"
+
+  moveMapToAuthor: =>
+    App.map.moveToMarker(@marker)
 
   show: (map) ->
     @marker.setMap(map)

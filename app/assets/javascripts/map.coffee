@@ -22,6 +22,11 @@ class @Map
   nePoint: ->
     @mapBounds().getNorthEast()
 
+  moveToMarker: (marker) =>
+    @map.setCenter
+      lat: marker.position.lat()
+      lng: marker.position.lng()
+
   fetchAuthorsParams: ->
     bounds:
       sw_point:

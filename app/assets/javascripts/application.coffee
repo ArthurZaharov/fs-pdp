@@ -17,4 +17,4 @@ $(document).foundation()
 
 $ ->
   if $("#map").length > 0
-    new Map()
+    App.map = new Map()

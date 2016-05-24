@@ -1,11 +1,13 @@
 class @Map
   mapElement: document.getElementById("map")
-  defaultCenter:
-    lat: 29.951066
-    lng: -90.071532
+  defaultMapOptions:
+    center:
+      lat: 29.951066
+      lng: -90.071532
+    zoom: 11
 
   constructor: ->
-    @map = new google.maps.Map(@mapElement, { center: @defaultCenter, zoom: 11 })
+    @map = new google.maps.Map(@mapElement, @defaultMapOptions)
     navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
     @bindEvents()
 

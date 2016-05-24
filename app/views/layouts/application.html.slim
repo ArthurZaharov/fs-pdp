@@ -27,8 +27,6 @@ html class="no-js" lang="en"
         = render "messages"
         = yield
 
-    = render "footer"
-
     javascript:
       App.currentUserData = #{{current_user.to_json}};
       App.requestData = #{{ { ip: request.ip }.to_json }};

@@ -1,11 +1,12 @@
 class @SearchBox
   ui:
     input: $("#search-box")
+    search: $(".search-authors")
     searchContainer: $(".search-container")
 
   constructor: (map) ->
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(@ui.input[0])
-    @ui.input.removeClass("hide")
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(@ui.search[0])
+    @ui.search.removeClass("hide")
     @bindEvents()
 
   bindEvents: ->
@@ -20,13 +21,7 @@ class @SearchBox
       success: @showAuthors
 
   showAuthors: (authors) =>
-    @ui.searchContainer
-      .html("")
-      .css
-        width: @ui.input.css("width")
-        position: "absolute"
-        top: @ui.input.css("height")
-        left: @ui.input.css("left")
+    @ui.searchContainer.html("")
 
     authors.forEach (author) =>
       @ui.searchContainer[0].appendChild(new Author(author).element)

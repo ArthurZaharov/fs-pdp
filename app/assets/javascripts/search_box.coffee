@@ -5,6 +5,7 @@ class @SearchBox
 
   constructor: (map) ->
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(@ui.input[0])
+    @ui.input.removeClass("hide")
     @bindEvents()
 
   bindEvents: ->

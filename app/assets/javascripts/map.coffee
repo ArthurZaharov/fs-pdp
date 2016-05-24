@@ -8,10 +8,10 @@ class @Map
     @map = new google.maps.Map(@mapElement, { center: @defaultCenter, zoom: 11 })
     navigator.geolocation.getCurrentPosition(@byBrowserPosition, @byIpPosition)
     @bindEvents()
-    new SearchBox(@map)
 
   bindEvents: () ->
     @map.addListener("bounds_changed", @fetchAuthors)
+    google.maps.event.addListenerOnce(@map, "idle", () => new SearchBox(@map))
 
   mapBounds: ->
     @map.getBounds()

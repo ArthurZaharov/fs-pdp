@@ -1,5 +1,4 @@
 class ApplicationDecorator < Draper::Decorator
-  include ActionView::Helpers::TextHelper
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::AssetTagHelper
   include LocalTimeHelper
@@ -10,8 +9,8 @@ class ApplicationDecorator < Draper::Decorator
     PaginatingDecorator
   end
 
-  def formatted_content
-    simple_format(object.content)
+  def content_excerpt
+    object.content.truncate(500, separator: " ")
   end
 
   def posted_by

@@ -5,7 +5,7 @@
         h2 = link_to(article.title, article)
     .row
       .columns
-        = article.formatted_content
+        = simple_format(article.content)
     .row
       .columns.medium-8
         - if policy(article).manage?

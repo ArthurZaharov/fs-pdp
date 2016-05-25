@@ -1,6 +1,7 @@
 = simple_form_for(article) do |f|
   .form-inputs
     = f.input :title, required: true, autofocus: true
+    = f.input :kind, as: :select, include_blank: false, collection: %w(free paid)
     = f.input :content, as: :text, required: true, input_html: { rows: 10 }
   .form-actions
     = f.button :submit, class: "small"

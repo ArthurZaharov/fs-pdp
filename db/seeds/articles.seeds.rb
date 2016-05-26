@@ -10,6 +10,7 @@ articles = [
   },
   {
     title: "A Wild, Wild West Response to the Syrian Refugee Crisis",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       In Kulltorp, Sweden, some 250 miles southwest of Stockholm, there’s an American-style Wild West theme park named High Chaparral. In the summer, at the height of tourism season, it’s exactly what you would imagine — sort of a dinner theater version of Butch Cassidy and the Sundance Kid (only more Swedish).
       But today — when there’s mostly only snow on the ground and no tourists to speak of — it’s host to 500 Syrians who have travelled to Sweden in order to escape the war back home. On the surface, there could be no more bizarre refugee camp. But such is the humanitarian crisis in Syria and such is Europe’s scramble to handle so many refugees at once.
@@ -39,6 +40,7 @@ articles = [
   },
   {
     title: "My 10 Favorite Wrestlemania Matches",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       I think this is my very favorite Wrestlemania match ever.
       It is an “I Quit” match, which means it can only end when one of the wrestlers submits and says those words. Bret and Austin had a violent blood feud going into this, and that fury carries itself into the match. They fight into the bleachers, up the stairs and back down, destroying each other the whole way. They get back into the ring, and though they don’t put on a very scientific wrestling match, they engage in such physical and psychological warfare that the crowd is whipped into a frenzy, more so than they could have ever expected.
@@ -48,6 +50,7 @@ articles = [
   },
   {
     title: "I Have Met the Bernie Bro (and He is Us).",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       There we were at our Washington state caucus, engaging in the democratic process. I was thrilled to see the large turnout of young voters, and eager to hear their reasons for engaging with the body politic.
       A very young man fumbled through a statement about the exorbitant price of college. He veered into a criticism of the Clinton administration and the implied trustworthiness of the Clinton brand. We older voters patiently waited for the history lesson to end.
@@ -69,6 +72,7 @@ articles = [
   },
   {
     title: "A behind-the-scenes look at March on the campaign trail with Hillary Clinton",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       March was the busiest month of the 2016 campaign so far: Democrats held 28 contests in 31 days and awarded almost half of the delegates up for grabs in the Democratic primary.
       Hillary Clinton and President Clinton spent the whirlwind month traveling the country — hitting 18 states and fighting for every single vote.
@@ -77,6 +81,7 @@ articles = [
   },
   {
     title: "Museum Logos: Drawing The Line",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       The change got me thinking about Museum logos more generally, and I started spending more time analysing them. (Because that’s just how fun I am). While looking over a few visual identities, I stumbled across a trend. A harrowing commonality that suggests some international conspiracy between our cultural gatekeepers. I am equal parts scared and excited to present my findings to you today.
       What are we looking at here? Sure, it’s the name of the museum, but what’s important is that it’s an abbreviation where the two letters get smushed together along a diagonal line. It’s a simple way of depicting the different disciplines of the Museum, while simultaneously symbolising the influence of both Victoria *and* Albert.
@@ -97,6 +102,7 @@ articles = [
   },
   {
     title: "Cuttin’ for your country",
+    kind: "paid",
     content: <<-CONTENT.strip_heredoc
       Woodchopping used to be must-watch television — like Top Town, Mastermind and It’s In The Bag. But while the sport has lost its profile, its never quite gone away. In late summer, Peter Malcouronne went to the small Bay of Plenty town of Katikati to watch a down-on-its-luck New Zealand side take on Australia.
       Head past the haunted house and the bouncy castle, past the ride-on lawnmowers and around the racing pigs (reputedly the fastest in all Katikati) and you’ll see them — 10 giants in green tracksuits, driven by drizzle to a bloke’s huddle under a cypress tree. “So this is the New Zealand summer?” says Justin Beckett drolly.

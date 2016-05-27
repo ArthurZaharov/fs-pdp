@@ -1,7 +1,8 @@
 - if policy(author).subscribe?
-  h3 Buy subscription
-  - author.subscription_prices.each do |type, price|
-    - if price.to_f > 0
-      = link_to "#{type.tr('_', ' ').titleize} (#{price}$)",
-                "#",
-                class: "button small"
+  .author-subscriptions
+    h3 = t("subscription.subscribe_title")
+    - author.subscription_prices.each do |type, price|
+      - if price.to_f > 0
+        = link_to t("subscription.plan.#{type}", price: price),
+                  "#",
+                  class: "button tiny"

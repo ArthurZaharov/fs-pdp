@@ -1,7 +1,10 @@
 .row
-  .user
-    .columns.medium-3
+  .columns
+    h2 = t("author.title")
+.row
+  .columns.medium-3
+    .user
       = render("profile")
-  .articles
-    .columns.medium-9
+  .columns.medium-9
+    .articles
       = render(partial: "authors/article", collection: articles)

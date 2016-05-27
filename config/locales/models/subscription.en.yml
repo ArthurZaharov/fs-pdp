@@ -1,0 +1,7 @@
+en:
+  subscription:
+    subscribe_title: "Subscribe plans"
+    plan:
+      weekly_subscription_price: "Weekly plan ($%{price})"
+      monthly_subscription_price: "Monthly plan ($%{price})"
+      yearly_subscription_price: "Yearly plan ($%{price})"

@@ -106,6 +106,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Application specific options
-  #
-  config.host = "morning-sea-2816.herokuapp.com"
+  config.host = "fs-pdp.herokuapp.com"
 end

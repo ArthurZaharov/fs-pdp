@@ -45,6 +45,7 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem "stripe-rails"
 
 group :staging, :production do
   gem "dalli"

@@ -4,5 +4,5 @@
     - author.subscription_prices.each do |type, price|
       - if price.to_f > 0
         = link_to t("subscription.plan.#{type}", price: price),
-                  "#",
+                  new_author_subscription_path(author),
                   class: "button tiny"

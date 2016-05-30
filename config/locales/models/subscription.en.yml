@@ -1,6 +1,7 @@
 en:
   subscription:
     subscribe_title: "Subscribe plans"
+    expired_at: "Subscription expired at %{expired_at}"
     plan:
       weekly_subscription_price: "Weekly plan ($%{price})"
       monthly_subscription_price: "Monthly plan ($%{price})"

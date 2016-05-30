@@ -1,3 +1,3 @@
 class SubscriptionDecorator < ApplicationDecorator
-  delegate :id, :card_number, :card_month, :card_year, :card_cvv
+  delegate :id
 end

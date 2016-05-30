@@ -6,4 +6,8 @@
     = author.full_name_with_email
 .row
   .columns
-    = render "subscription_prices"
+    br
+    - if current_user.subscribed_to?(author)
+      em = t("subscription.expired_at", expired_at: subscription.expired_at)
+    - else
+      = render "subscription_prices"

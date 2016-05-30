@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :authors, only: %i(index show) do
-    resources :subscriptions, only: %i(new create)
+    resources :subscriptions, only: %i(create)
   end
   resources :search_authors, only: :index
   resource :feedback, only: %i(new create)

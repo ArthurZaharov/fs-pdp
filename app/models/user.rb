@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :comments
+  has_many :subscriptions
+  has_many :authors, through: :subscriptions
 
   def to_s
     full_name
@@ -31,5 +33,9 @@ class User < ActiveRecord::Base
 
   def paid_subscriptions?
     subscription_prices.values.any?(&:present?)
+  end
+
+  def subscribed_to?(author)
+    subscriptions.pluck(:author_id).include?(author.id)
   end
 end

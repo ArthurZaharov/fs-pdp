@@ -36,7 +36,7 @@ module RailsBase
     config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
 
     # Stripe API config
-    config.stripe.secret_key = ENV.fetch("STRIPE_SECRET_KEY")
-    config.stripe.publishable_key = ENV.fetch("STRIPE_PUBLISHABLE_KEY")
+    config.stripe.secret_key = ENV.fetch("STRIPE_SECRET_KEY", "")
+    config.stripe.publishable_key = ENV.fetch("STRIPE_PUBLISHABLE_KEY", "")
   end
 end

@@ -1,8 +1,8 @@
 .article
   .row
     .columns
-      h3 = link_to(article.title, article)
-      - if policy(article).manage?
+      h3 = link_to_if(policy(article).show?, article.title, article)
+      - if policy(article).edit?
         = link_to(edit_article_path(article))
           i.fi-pencil
   .row

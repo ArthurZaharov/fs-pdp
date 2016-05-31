@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :comments
   has_many :subscriptions
-  has_many :authors, through: :subscriptions
 
   def to_s
     full_name
@@ -36,6 +35,6 @@ class User < ActiveRecord::Base
   end
 
   def subscribed_to?(author)
-    subscriptions.pluck(:author_id).include?(author.id)
+    subscriptions.where(author_id: author.id).where("expired_at >= ?", Time.zone.today).present?
   end
 end

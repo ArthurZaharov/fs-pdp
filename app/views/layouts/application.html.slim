@@ -32,4 +32,5 @@ html class="no-js" lang="en"
       App.requestData = #{{ { ip: request.ip }.to_json }};
 
     = javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV.fetch('GOOGLE_MAPS_API_KEY', '')}"
+    = stripe_javascript_tag
     = javascript_include_tag :application

@@ -2,13 +2,13 @@
   .article
     .row
       .columns
-        h2 = link_to(article.title, article)
+        h2 = link_to_if(policy(article).show?, article.title, article)
     .row
       .columns
         = simple_format(article.content)
     .row
       .columns.medium-8
-        - if policy(article).manage?
+        - if policy(article).edit?
           = link_to(edit_article_path(article))
             fi.fi-pencil
           = link_to(article_path(article), method: :delete)

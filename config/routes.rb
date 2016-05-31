@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
-  resources :authors, only: %i(index show)
+  resources :authors, only: %i(index show) do
+    resources :subscriptions, only: %i(create)
+  end
   resources :search_authors, only: :index
   resource :feedback, only: %i(new create)
 

@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: %i(new create edit update)
-  before_action :authorize!, only: %i(edit update)
+  before_action :authorize!, only: %i(show edit update)
 
   expose_decorated(:articles) { |scope| scope.includes(:user).recent.limit(10) }
   expose_decorated(:article, attributes: :article_params)
@@ -38,10 +38,10 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :kind, :content)
   end
 
   def authorize!
-    authorize(article, :manage?)
+    authorize(article, "#{params[:action]}?")
   end
 end

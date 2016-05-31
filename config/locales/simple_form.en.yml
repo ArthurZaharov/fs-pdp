@@ -17,6 +17,8 @@ en:
         edit:
           password: Enter new password
           password_confirmation: Confirm your new password
+      article:
+        kind: Type
     hints:
       user:
         edit:

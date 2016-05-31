@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322103418) do
+ActiveRecord::Schema.define(version: 20160527220546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160322103418) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "kind",       default: "free", null: false
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
@@ -36,6 +37,17 @@ ActiveRecord::Schema.define(version: 20160322103418) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "author_id",  null: false
+    t.date     "expired_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscriptions", ["author_id"], name: "index_subscriptions_on_author_id", using: :btree
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -60,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160322103418) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.jsonb    "subscription_prices"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

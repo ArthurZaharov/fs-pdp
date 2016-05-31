@@ -3,26 +3,37 @@
     h2 = title("Edit #{current_user.full_name}")
 
 .row
-  .medium-6.columns
+  .medium-8.columns
     = simple_form_for resource,
         as: resource_name,
         url: registration_path(resource_name),
         html: { method: :put } do |f|
 
       .form-inputs
-        = f.input :full_name, required: true, autofocus: true
-        = f.input :email, required: true
-        = f.input :country
-        = f.input :city
-        = f.input :address
-        = f.input :password, autocomplete: "off", required: false
-        = f.input :password_confirmation, required: false
-        = f.input :current_password, required: true
+        fieldset
+          legend Profile information
+          = f.input :full_name, required: true, autofocus: true
+          = f.input :email, required: true
+        fieldset
+          legend Location
+          = f.input :country
+          = f.input :city
+          = f.input :address
+        fieldset
+          legend Subscriptions prices
+          = f.input :weekly_subscription_price, label: "Weekly"
+          = f.input :monthly_subscription_price, label: "Monthly"
+          = f.input :yearly_subscription_price, label: "Yearly"
+        fieldset
+          legend Security
+          = f.input :password, autocomplete: "off", required: false
+          = f.input :password_confirmation, required: false
+          = f.input :current_password, required: true
 
       .form-actions
         = f.button :submit, "Update"
 
-  .medium-6.columns.end
+  .medium-4.columns.end
     h6
       b Cancel my account
     p

@@ -1,0 +1,15 @@
+- if policy(author).subscribe?
+  .author-subscriptions
+    h3 = t("subscription.subscribe_title")
+    - author.subscription_prices.each do |type, price|
+      - if price.to_f > 0
+        = form_tag author_subscriptions_path(author) do
+          = hidden_field_tag :subscription_type, type
+          script(src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key=Rails.configuration.stripe.publishable_key
+            data-label=t("subscription.plan.#{type}", price: price)
+            data-description="Subscribe"
+            data-email="#{current_user.email}"
+            data-amount="#{price.to_f * 100}"
+            data-locale="auto")

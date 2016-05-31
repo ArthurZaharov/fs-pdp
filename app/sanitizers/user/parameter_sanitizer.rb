@@ -11,6 +11,9 @@ class User
       country
       city
       address
+      weekly_subscription_price
+      monthly_subscription_price
+      yearly_subscription_price
     ).freeze
 
     def sign_up

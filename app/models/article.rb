@@ -5,7 +5,13 @@ class Article < ActiveRecord::Base
     against: %w(title content),
     using: { tsearch: { prefix: true } }
 
+  enum kind: {
+    free: "free",
+    paid: "paid"
+  }
+
   validates :title, :content, :user, presence: true
+  validates :kind, inclusion: { in: %w(free paid) }
 
   belongs_to :user
   has_many :comments

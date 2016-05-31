@@ -3,6 +3,7 @@ class AuthorsController < ApplicationController
 
   expose_decorated(:author, model: :user)
   expose_decorated(:articles, ancestor: :author)
+  expose(:subscription) { current_user.subscriptions.where(author_id: author.id).first }
 
   def index
     respond_with(authors_in_bounds)

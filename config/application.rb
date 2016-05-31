@@ -27,12 +27,16 @@ module RailsBase
     config.middleware.use Rack::Deflater
 
     # Default e-mail address which will be shown in the "from" devise emails, initializers/devise.rb,
-    config.noreply = "noreply@morning-sea-2816.herokuapp.com"
+    config.noreply = "noreply@fs-pdp.herokuapp.com"
 
     # Set default From address for all Mailers
     config.action_mailer.default_options = { from: ENV.fetch("MAILER_SENDER_ADDRESS") }
 
     # Set URL options to be able to use url_for helpers
     config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
+
+    # Stripe API config
+    config.stripe.secret_key = ENV.fetch("STRIPE_SECRET_KEY", "")
+    config.stripe.publishable_key = ENV.fetch("STRIPE_PUBLISHABLE_KEY", "")
   end
 end

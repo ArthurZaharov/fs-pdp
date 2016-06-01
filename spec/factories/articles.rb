@@ -3,5 +3,10 @@ FactoryGirl.define do
     title
     content
     user
+    kind "free"
+  end
+
+  trait :paid do
+    kind "paid"
   end
 end

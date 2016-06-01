@@ -1,0 +1,10 @@
+.row
+  .columns
+    h2 Your subscriptions
+.row
+  .columns
+    - if subscriptions.present?
+      - subscriptions.each do |subscription|
+        = render("user_subscriptions/subscription", subscription: subscription)
+    - else
+      em= t("subscription.empty_state")

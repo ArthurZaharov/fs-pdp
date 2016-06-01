@@ -5,4 +5,10 @@ class ApplicationPolicy
     @user = user
     @object = object.to_model
   end
+
+  private
+
+  def owner?
+    user == object.user
+  end
 end

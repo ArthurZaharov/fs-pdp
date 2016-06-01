@@ -4,7 +4,11 @@
 .row
   .columns
     - if subscriptions.present?
-      - subscriptions.each do |subscription|
-        = render("user_subscriptions/subscription", subscription: subscription)
+      table
+        tr
+          th(scope="column") Author
+          th(scope="column") Subscription expired at
+          th(scope="column") Actions
+        = render(subscriptions)
     - else
       em= t("subscription.empty_state")

@@ -1,0 +1,18 @@
+.article
+  .row
+    .columns
+      h2 = link_to_if(policy(article).show?, article.title, article)
+      = article.type
+  .row
+    .columns
+      = simple_format(article.content)
+  .row
+    .columns.medium-8
+      - if policy(article).edit?
+        = link_to(edit_article_path(article))
+          fi.fi-pencil
+        = link_to(article_path(article), method: :delete)
+          fi.fi-trash
+
+    .columns.medium-4
+      p.posted-by.right = article.posted_by

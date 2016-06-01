@@ -6,7 +6,7 @@
         = article.type
     .row
       .columns
-        = simple_format(article.content)
+        = simple_format(article.content_excerpt)
     .row
       .columns.medium-8
         - if policy(article).edit?

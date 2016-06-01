@@ -1,6 +1,6 @@
 class ArticlePolicy < ApplicationPolicy
   def edit?
-    user == object.user
+    owner?
   end
 
   alias update? edit?
@@ -9,6 +9,6 @@ class ArticlePolicy < ApplicationPolicy
     return true if object.free?
     return false unless user
 
-    user.subscribed_to?(object.user)
+    owner? || user.subscribed_to?(object.user)
   end
 end

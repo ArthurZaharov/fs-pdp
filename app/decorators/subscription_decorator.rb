@@ -1,3 +1,3 @@
 class SubscriptionDecorator < ApplicationDecorator
-  delegate :id, :expired_at, :author_full_name
+  delegate :id, :expired_at, :author_full_name, :author
 end

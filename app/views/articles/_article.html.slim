@@ -3,6 +3,7 @@
     .row
       .columns
         h2 = link_to_if(policy(article).show?, article.title, article)
+        = article.type
     .row
       .columns
         = simple_format(article.content)

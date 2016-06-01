@@ -1,8 +1,6 @@
 class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
-  expose_decorated(:author, model: :user, decorator: UserDecorator)
-
   def create
     if subcribe_to_author.success?
       flash[:notice] = "Subscription created"
@@ -10,7 +8,7 @@ class SubscriptionsController < ApplicationController
       flash[:alert] = subcribe_to_author.message
     end
 
-    redirect_to(root_path)
+    redirect_to(author_path(params[:author_id]))
   end
 
   private

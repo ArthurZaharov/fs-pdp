@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe AuthorsWithinBoundingBoxQuery, :vcr do
+describe AuthorsInLocationQuery, :vcr do
   let!(:new_york_user) { create :user, :in_new_york }
   let!(:new_orleans_user) { create :user, :in_new_orleans }
 

@@ -1,4 +1,4 @@
-class AuthorsWithinBoundingBoxQuery
+class AuthorsInLocationQuery
   attr_reader :sw_point, :ne_point
   private :sw_point, :ne_point
 

@@ -19,6 +19,6 @@ class AuthorsController < ApplicationController
   end
 
   def authors_in_bounds
-    AuthorsWithinBoundingBoxQuery.new(search_params).all
+    AuthorsInLocationQuery.new(search_params).all
   end
 end

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :articles, only: %i(index show new create edit update destroy) do
+  resources :articles, only: %i(index show) do
     resources :comments, only: :create
   end
+
+  resources :user_articles, only: %i(new create edit update destroy)
 
   resources :authors, only: %i(index show) do
     resources :subscriptions, only: :create

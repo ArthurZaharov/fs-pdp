@@ -9,10 +9,10 @@
         = simple_format(article.content_excerpt)
     .row
       .columns.medium-8
-        - if policy(article).edit?
-          = link_to(edit_article_path(article))
+        - if policy(article).manage?
+          = link_to(edit_user_article_path(article))
             fi.fi-pencil
-          = link_to(article_path(article), method: :delete)
+          = link_to(user_article_path(article), method: :delete)
             fi.fi-trash
 
       .columns.medium-4

@@ -4,7 +4,7 @@ feature "Create articles" do
   include_context "current user signed in"
 
   before(:each) do
-    visit new_article_path
+    visit new_user_article_path
   end
 
   scenario "User creates article" do

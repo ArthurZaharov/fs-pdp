@@ -1,9 +1,7 @@
 class ArticlePolicy < ApplicationPolicy
-  def edit?
+  def manage?
     owner?
   end
-
-  alias update? edit?
 
   def show?
     return true if object.free?

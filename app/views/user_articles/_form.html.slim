@@ -1,4 +1,4 @@
-= simple_form_for(article) do |f|
+= simple_form_for([:user, article]) do |f|
   .form-inputs
     = f.input :title, required: true, autofocus: true
     = f.input :kind, as: :select, include_blank: false, collection: %w(free paid)

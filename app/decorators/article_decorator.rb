@@ -7,7 +7,7 @@ class ArticleDecorator < ApplicationDecorator
   delegate :id, :title, :kind, :content, :user
 
   def type
-    content_tag(:span, "#{object.kind} article", class: "label radius #{label_color}")
+    content_tag(:span, "#{object.kind} article", class: "label radius#{label_color}")
   end
 
   def content_excerpt
@@ -17,6 +17,6 @@ class ArticleDecorator < ApplicationDecorator
   private
 
   def label_color
-    object.paid? ? "" : "secondary"
+    object.free? ? " secondary" : ""
   end
 end

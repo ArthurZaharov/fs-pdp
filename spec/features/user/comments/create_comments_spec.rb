@@ -6,7 +6,7 @@ feature "Create comments" do
   let!(:article) { create :article }
   let(:comment_content) { "New comment content" }
 
-  before(:each) do
+  before do
     visit article_path(article)
   end
 

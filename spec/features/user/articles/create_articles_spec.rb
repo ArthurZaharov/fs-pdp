@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Create articles" do
   include_context "current user signed in"
 
-  before(:each) do
+  before do
     visit new_user_article_path
   end
 

@@ -5,7 +5,7 @@ feature "Edit articles" do
 
   let!(:article) { create :article, user: current_user }
 
-  before(:each) do
+  before do
     visit edit_user_article_path(article)
   end
 

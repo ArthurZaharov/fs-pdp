@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Show article (visitor)" do
   let!(:article) { create :article }
 
-  before(:each) do
+  before do
     visit article_path(article)
   end
 

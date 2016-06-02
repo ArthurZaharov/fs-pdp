@@ -38,5 +38,8 @@ module RailsBase
     # Stripe API config
     config.stripe.secret_key = ENV.fetch("STRIPE_SECRET_KEY", "")
     config.stripe.publishable_key = ENV.fetch("STRIPE_PUBLISHABLE_KEY", "")
+
+    # Autoload paths
+    config.autoload_paths << Rails.root.join("app/decorators/concerns")
   end
 end

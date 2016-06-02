@@ -4,7 +4,7 @@ feature "List comments (visitor)" do
   let(:article) { create :article }
   let!(:comment) { create :comment, article: article }
 
-  before(:each) do
+  before do
     visit article_path(article)
   end
 

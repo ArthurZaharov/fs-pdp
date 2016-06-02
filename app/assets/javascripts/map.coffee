@@ -5,6 +5,7 @@ class @Map
       lat: 29.951066
       lng: -90.071532
     zoom: 11
+    scrollwheel: false
 
   constructor: ->
     @map = new google.maps.Map(@mapElement, @defaultMapOptions)

@@ -1,0 +1,14 @@
+.row
+  .columns
+    h2 Your subscriptions
+.row
+  .columns
+    - if subscriptions.present?
+      table
+        tr
+          th(scope="column") Author
+          th(scope="column") Subscription expired at
+          th(scope="column") Actions
+        = render(subscriptions)
+    - else
+      em= t("subscription.empty_state")

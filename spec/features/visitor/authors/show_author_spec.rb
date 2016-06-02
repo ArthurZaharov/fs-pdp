@@ -5,7 +5,7 @@ feature "Show author page (visitor)" do
   let!(:author_article) { create :article, user: author }
   let!(:other_article) { create :article }
 
-  before(:each) do
+  before do
     visit author_path(author)
   end
 

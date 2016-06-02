@@ -1,7 +1,7 @@
 class PayForSubscription
   include Interactor
 
-  delegate :subscription_type, :author_id, :stripe_email, :stripe_token, to: :context
+  delegate :subscription_type, :author_id, :stripe_token, to: :context
 
   def call
     context.charge = charge

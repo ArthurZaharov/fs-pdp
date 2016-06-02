@@ -37,7 +37,7 @@ describe ArticleDecorator do
       let(:article) { build :article, content: content }
 
       before do
-        allow_any_instance_of(String).to receive(:truncate).with(500, separator: " ").and_return(excerpt)
+        allow(article).to receive_message_chain("content.truncate").with(500, separator: " ").and_return(excerpt)
       end
 
       it "return excerpt of article's content" do

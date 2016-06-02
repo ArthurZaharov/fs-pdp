@@ -11,6 +11,8 @@ class CreateSubscription
 
   def call
     context.fail!(message: "Cannot create subscription") unless subscription.save
+
+    author_articles.each(&:touch)
   end
 
   private
@@ -22,6 +24,10 @@ class CreateSubscription
       charge_id: charge["id"],
       expired_at: expired_at
     )
+  end
+
+  def author_articles
+    Article.where(user_id: author_id)
   end
 
   def expired_at

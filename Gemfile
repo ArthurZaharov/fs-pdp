@@ -2,50 +2,50 @@ source "https://rubygems.org"
 
 ruby "2.2.4"
 
-gem "rails", "4.2.5.2"
+gem "rails", "4.2.8"
 gem "pg"
 
 # assets
 gem "autoprefixer-rails"
-gem "coffee-rails"
-gem "foundation-icons-sass-rails"
+gem "coffee-rails", ">= 4.1.1"
+gem "foundation-icons-sass-rails", ">= 3.0.0"
 gem "foundation-rails", "~> 5.5.2.1"
-gem "jquery-rails"
-gem "sass-rails", "~> 5.0.0"
+gem "jquery-rails", ">= 4.1.0"
+gem "sass-rails", "~> 5.0.4"
 gem "skim", git: "https://github.com/jfirebaugh/skim"
 gem "therubyracer", platforms: :ruby
 gem "uglifier", ">= 2.7.2"
 
 # views
-gem "active_link_to"
+gem "active_link_to", ">= 1.0.3"
 gem "country_select"
-gem "metamagic"
-gem "simple_form"
+gem "metamagic", ">= 3.1.7"
+gem "simple_form", ">= 3.2.1"
 gem "slim"
 
 # all other gems
 gem "decent_decoration"
 gem "decent_exposure"
-gem "devise"
-gem "draper"
+gem "devise", ">= 3.5.6"
+gem "draper", ">= 2.1.0"
 gem "flamegraph"
 gem "geocoder"
 gem "google-analytics-rails"
-gem "health_check"
+gem "health_check", ">= 1.5.1"
 gem "interactor"
-gem "kaminari"
-gem "local_time"
+gem "kaminari", ">= 0.16.3"
+gem "local_time", ">= 1.0.3"
 gem "memory_profiler"
-gem "pg_search"
+gem "pg_search", ">= 1.0.6"
 gem "puma"
-gem "pundit"
+gem "pundit", ">= 1.1.0"
 gem "rack-canonical-host"
 gem "rack-mini-profiler", require: false
-gem "responders"
+gem "responders", ">= 2.1.1"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
-gem "stripe-rails"
+gem "stripe-rails", ">= 0.3.1"
 
 group :staging, :production do
   gem "dalli"
@@ -55,13 +55,13 @@ end
 
 group :test do
   gem "capybara"
-  gem "capybara-webkit"
-  gem "codeclimate-test-reporter", require: false
+  gem "capybara-webkit", ">= 1.8.0"
+  gem "codeclimate-test-reporter", ">= 0.5.0", require: false
   gem "database_cleaner"
   gem "email_spec"
-  gem "formulaic"
+  gem "formulaic", ">= 0.3.0"
   gem "launchy"
-  gem "shoulda-matchers", require: false
+  gem "shoulda-matchers", ">= 3.1.1", require: false
   gem "vcr"
   gem "webmock"
 end
@@ -71,16 +71,16 @@ group :development, :test do
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "byebug"
-  gem "coffeelint"
-  gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "coffeelint", ">= 1.14.0"
+  gem "dotenv-rails", ">= 2.1.0"
+  gem "factory_girl_rails", ">= 4.6.0"
   gem "faker"
   gem "fuubar", "~> 2.0.0.rc1"
   gem "jasmine", "> 2.0"
   gem "jasmine-jquery-rails"
   gem "pry-rails"
-  gem "rails_best_practices", require: false
-  gem "rspec-rails", "~> 3.0"
+  gem "rails_best_practices", ">= 1.16.0", require: false
+  gem "rspec-rails", "~> 3.4", ">= 3.4.2"
   gem "rubocop", require: false
   gem "rubocop-rspec", require: false
   gem "scss_lint", require: false
@@ -88,13 +88,13 @@ group :development, :test do
 end
 
 group :development do
-  gem "bullet"
+  gem "bullet", ">= 5.0.0"
   gem "foreman", require: false
   gem "letter_opener"
-  gem "quiet_assets"
-  gem "rails-erd"
-  gem "slim-rails"
+  gem "quiet_assets", ">= 1.1.0"
+  gem "rails-erd", ">= 1.4.6"
+  gem "slim-rails", ">= 3.0.1"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "web-console", "~> 2.0"
+  gem "web-console", "~> 2.3", ">= 2.3.0"
 end

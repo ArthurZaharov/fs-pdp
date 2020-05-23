@@ -37,7 +37,7 @@ gem "kaminari"
 gem "local_time"
 gem "memory_profiler"
 gem "pg_search"
-gem "puma"
+gem "puma", ">= 3.12.6"
 gem "pundit"
 gem "rack-canonical-host"
 gem "rack-mini-profiler", require: false

@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.2.4"
 
-gem "rails", "4.2.5.2"
+gem "rails", "6.0.3.5"
 gem "pg"
 
 # assets
@@ -19,7 +19,7 @@ gem "uglifier", ">= 2.7.2"
 # views
 gem "active_link_to"
 gem "country_select"
-gem "metamagic"
+gem "metamagic", ">= 3.1.7"
 gem "simple_form"
 gem "slim"
 
@@ -31,7 +31,7 @@ gem "draper"
 gem "flamegraph"
 gem "geocoder"
 gem "google-analytics-rails"
-gem "health_check"
+gem "health_check", ">= 1.5.1"
 gem "interactor"
 gem "kaminari"
 gem "local_time"
@@ -45,7 +45,7 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
-gem "stripe-rails"
+gem "stripe-rails", ">= 0.3.1"
 
 group :staging, :production do
   gem "dalli"

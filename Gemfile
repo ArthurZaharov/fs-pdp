@@ -39,7 +39,7 @@ gem "memory_profiler"
 gem "pg_search"
 gem "puma"
 gem "pundit"
-gem "rack-canonical-host"
+gem "rack-canonical-host", ">= 0.1.0"
 gem "rack-mini-profiler", require: false
 gem "responders"
 gem "rollbar"
@@ -54,16 +54,16 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara"
-  gem "capybara-webkit"
+  gem "capybara", ">= 2.6.2"
+  gem "capybara-webkit", ">= 1.8.0"
   gem "codeclimate-test-reporter", require: false
   gem "database_cleaner"
-  gem "email_spec"
-  gem "formulaic"
-  gem "launchy"
+  gem "email_spec", ">= 2.1.0"
+  gem "formulaic", ">= 0.3.0"
+  gem "launchy", ">= 2.4.3"
   gem "shoulda-matchers", require: false
   gem "vcr"
-  gem "webmock"
+  gem "webmock", ">= 1.24.1"
 end
 
 group :development, :test do
@@ -90,7 +90,7 @@ end
 group :development do
   gem "bullet"
   gem "foreman", require: false
-  gem "letter_opener"
+  gem "letter_opener", ">= 1.4.1"
   gem "quiet_assets"
   gem "rails-erd"
   gem "slim-rails"

@@ -48,7 +48,7 @@ gem "stackprof"
 gem "stripe-rails"
 
 group :staging, :production do
-  gem "dalli"
+  gem "dalli", ">= 3.2.3"
   gem "newrelic_rpm"
   gem "rails_stdout_logging"
 end

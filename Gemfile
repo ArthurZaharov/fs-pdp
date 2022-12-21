@@ -11,7 +11,7 @@ gem "coffee-rails"
 gem "foundation-icons-sass-rails"
 gem "foundation-rails", "~> 5.5.2.1"
 gem "jquery-rails"
-gem "sass-rails", "~> 5.0.0"
+gem "sass-rails", "~> 6.0.0"
 gem "skim", git: "https://github.com/jfirebaugh/skim"
 gem "therubyracer", platforms: :ruby
 gem "uglifier", ">= 2.7.2"
@@ -96,5 +96,5 @@ group :development do
   gem "slim-rails"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "web-console", "~> 2.0"
+  gem "web-console", "~> 2.3", ">= 2.3.0"
 end

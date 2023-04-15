@@ -39,7 +39,7 @@ gem "memory_profiler"
 gem "pg_search"
 gem "puma"
 gem "pundit"
-gem "rack-canonical-host"
+gem "rack-canonical-host", ">= 1.2.0"
 gem "rack-mini-profiler", require: false
 gem "responders"
 gem "rollbar"

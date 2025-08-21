@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.2.4"
 
-gem "rails", "4.2.5.2"
+gem "rails", "7.1.5.2"
 gem "pg"
 
 # assets
@@ -31,12 +31,12 @@ gem "draper"
 gem "flamegraph"
 gem "geocoder"
 gem "google-analytics-rails"
-gem "health_check"
+gem "health_check", ">= 1.7.2"
 gem "interactor"
 gem "kaminari"
 gem "local_time"
 gem "memory_profiler"
-gem "pg_search"
+gem "pg_search", ">= 2.0.0"
 gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
@@ -45,7 +45,7 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
-gem "stripe-rails"
+gem "stripe-rails", ">= 0.4.0"
 
 group :staging, :production do
   gem "dalli"
@@ -92,7 +92,7 @@ group :development do
   gem "foreman", require: false
   gem "letter_opener"
   gem "quiet_assets"
-  gem "rails-erd"
+  gem "rails-erd", ">= 1.4.7"
   gem "slim-rails"
   gem "spring"
   gem "spring-commands-rspec"
